@@ -3,15 +3,17 @@
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  
 }
 
 .container {
   flex: 1;
   margin-left: 0 !important;
   min-width: 100%;
+  min-height: 100%;
 }
 
-/* NAvbar */
+/* Navbar */
 .navbar {
   height: 5rem;
   background-color: white;
@@ -58,6 +60,13 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: space-evenly;
+}
+
+footer{
+
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 /* Cards */
@@ -116,10 +125,14 @@
   padding-right: 0;
 }
 
-/* signup page */
-.container {
-  width: 100%;
+/* signup page And login Page*/
+.link{
+  text-decoration: none;
 }
+.link:hover{
+  text-decoration: underline;
+}
+
 
 .register-photo {
   background: #f1f7fc;
