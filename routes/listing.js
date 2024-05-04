@@ -1,15 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const wrapAsync = require("../utils/wrpaAsync.js");
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
 const { islogin, isOwner, validation } = require("../middleware.js");
 const ListingRoute = require("../controllers/listings.js");
 
 router
   .route("/")
   .get(wrapAsync(ListingRoute.index))
-   .post(islogin, validation, wrapAsync(ListingRoute.create));
+  .post(islogin, validation, wrapAsync(ListingRoute.create));
 
 //NEW ROUTES
 router.get("/new", islogin, ListingRoute.new);

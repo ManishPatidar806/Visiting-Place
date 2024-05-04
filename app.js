@@ -18,8 +18,8 @@ const path = require("path");
 const session  = require('express-session');
 const MongoStore = require('connect-mongo');
 const port = 8080;
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
-const dburl = process.env.ATLASDB_URL;
+const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
+// const dburl = process.env.ATLASDB_URL;
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
@@ -28,21 +28,21 @@ app.use(express.static(path.join(__dirname, "public")));
 app.engine("ejs", ejsMate);
 
 
-const store = MongoStore.create({
-  mongoUrl:dburl,
-  crypto:{
-    seceret:process.env.SECERET,
-  },
-  touchAfter:24*3600,
-});
+// const store = MongoStore.create({
+//   mongoUrl:dburl,
+//   crypto:{
+//     seceret:process.env.SECERET,
+//   },
+//   touchAfter:24*3600,
+// });
 
-store.on("error",()=>{
-  console.log("ERROR IN MONGO SESSION STORE",err);
-});
+// store.on("error",()=>{
+//   console.log("ERROR IN MONGO SESSION STORE",err);
+// });
 
 
 const sessionOption ={
-  store,
+  // store,
   secret:process.env.SECERET,
   resave:false,
   saveUninitialized :true,
@@ -82,7 +82,7 @@ main()
     console.log(err);
   });
 async function main() {
-  await mongoose.connect(dburl);
+  await mongoose.connect(MONGO_URL);
 }
 
 app.all("*", (req, res) => {

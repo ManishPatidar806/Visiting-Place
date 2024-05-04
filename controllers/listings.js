@@ -29,6 +29,7 @@ module.exports.new = (req, res) => {
 
 //!create
 module.exports.create = async (req, res, next) => {
+  console.log(req.body.listing);
   const newListing = new Listing(req.body.listing);
   newListing.owner = req.user._id;
   await newListing.save();
