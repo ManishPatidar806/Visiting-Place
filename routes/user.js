@@ -5,7 +5,9 @@ const wrpaAsync = require("../utils/wrpaAsync");
 const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js");
 const UserController = require("../controllers/users.js");
+const ListingRoute = require("../controllers/listings.js");
 
+router.route('/').get(wrpaAsync(ListingRoute.index))
 router
   .route("/signup")
   .get(UserController.signupPage)
