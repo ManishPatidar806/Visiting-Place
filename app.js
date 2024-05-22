@@ -61,10 +61,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/" , (req,res)=>{
-  res.render("index.ejs")
-})
-
 app.use((req,res,next)=>{
   res.locals.success = req.flash("Success");
   res.locals.error = req.flash("error");
@@ -88,15 +84,10 @@ async function main() {
   await mongoose.connect(dburl);
 }
 
-app.all("*", (req, res) => {
-  next(new ExpressError(404, "Page not Found"));
+app.all("*", (req, res, next) => {
+  res.status(404).render("error.ejs", { message: "Page not found" })
 });
 
-app.use((err, req, res, next) => {
-  let { status = 500, message = "Something went wrong!" } = err;
-  next(res.status(status).render("error.ejs", { message }));
-  
-});
 
 app.listen(port, () => {
   console.log("Server is Started");
