@@ -2,7 +2,7 @@ const Listing = require("../models/listing.js");
 // !Index
 module.exports.index = async (req, res) => {
   const allListing = await Listing.find({});
-  res.render("listings/index.ejs", { allListing, currentuser: null });
+  res.render("listings/index.ejs", { allListing });
 };
 
 // !Show
