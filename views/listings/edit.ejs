@@ -60,22 +60,22 @@
           </div>
 
           <div class="mb-3 col-md-8">
-            <label for="country" class="form-label">Country</label>
+            <label for="country" class="form-label">State</label>
             <input
-              name="listing[country]"
-              value="<%= listing.location%>"
+              name="listing[state]"
+              value="<%= listing.state%>"
               type="text"
               required
               class="form-control"
             />
-            <div class="invalid-feedback">Country name should be valid</div>
+            <div class="invalid-feedback">State name should be valid</div>
           </div>
         </div>
         <div class="mb-3">
           <label for="location" class="form-label">Location</label>
           <input
             name="listing[location]"
-            value="<%= listing.country%>"
+            value="<%= listing.location>"
             type="text"
             required
             class="form-control"
