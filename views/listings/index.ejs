@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
-
-<div id="filters" style="justify-content: space-between;">
+<br>
+<div id="filters" style="justify-content: space-between; background-color: #f1f7fc;">
   <!-- <div class="filter">
     <div><i class="fa-solid fa-fire"></i></div>
     <P>Trending</P>
@@ -43,7 +43,7 @@
 
      <h3>Discover Your Favourite Spot!</h3>
 
-  <div class="tax-toggle " style="border: none; background-color: rgb(240, 240, 240);">
+  <!-- <div class="tax-toggle " style="border: none; background-color: #f1f7fc;">
     <div class="form-check-reverse form-switch">
       <input
         class="form-check-input"
@@ -55,17 +55,17 @@
         > Display taxes</label
       >
     </div>
-  </div>
+  </div> -->
 </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3" style="background-color: #f1f7fc;">
   <% for(let listing of allListing){%>
   <a
     href="/listings/<%=listing._id %>"
     class="listing-link"
-    style="text-decoration: none"
+    style="text-decoration: none ;background-color: #f1f7fc;"
   >
-    <div class="card col listing-card">
+    <div class="card col listing-card" style="background-color: #f1f7fc;">
       <img
         src="<%= listing.image%>"
         class="card-img-top"
@@ -77,8 +77,8 @@
         <p class="card-text">
           <b><%= listing.title %></b>
           <br />
-          &#8377;<%=listing.price.toLocaleString("en-IN")%>
-          <i class="tax-info">&nbsp; &nbsp;+18% GST</i>
+          <!-- &#8377;<%=listing.price.toLocaleString("en-IN")%>
+          <i class="tax-info">&nbsp; &nbsp;+18% GST</i> -->
         </p>
       </div>
     </div>

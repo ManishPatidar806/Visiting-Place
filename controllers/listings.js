@@ -42,6 +42,7 @@ module.exports.edit = async (req, res) => {
   let { id } = req.params;
   console.log(id);
   const listing = await Listing.findById(id);
+  console.log(listing);
   if (!listing) {
     req.flash("error", "Listing does not exist!");
     res.redirect("/listings");

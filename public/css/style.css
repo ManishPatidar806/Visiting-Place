@@ -1,3 +1,5 @@
+
+
 .body {
   font-family: "Plus Jakarta Sans", sans-serif !important;
   display: flex;
@@ -110,9 +112,14 @@ footer {
 }
 
 /* !Show List */
+.card-img-top-show {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
 
 .show-img {
-  height: 30vh;
+  height: 70% !important;
 }
 
 .btns {

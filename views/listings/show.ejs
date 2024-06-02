@@ -1,24 +1,28 @@
 <% layout("/layouts/boilerplate") %>
-<body>
+<br><br>
+<body style="background-color: #f1f7fc;">
   <div class="row mt-3 offset-0">
     <div class="col-8 offset-3">
       <h3><b><%=listing.title%></b></h3>
     </div>
-    <div class="card col-6 offset-3 listing-card">
+    <div class="card col-6 offset-3 listing-card" style="background-color: #f1f7fc;">
       <img
         src="<%=listing.image%>"
-        class="card-img-top show-img"
+        class=" show-img
+         card-img-top-show 
+
+        "
         alt="listing_image"
       />
       <div class="card-body">
         <p class="card-text">
           <br />
-          <b>Owned BY : <%= listing.owner.username %></b>
-          <br />
-          <%=listing.description%><br />
-          &#8377;<%=listing.price.toLocaleString("en-IN")%><br />
-          <%=listing.location%><br />
-          <%=listing.state%>
+          <!-- <b>Owned BY : <%= listing.owner.username %></b> -->
+         
+          <%=listing.description%><br /> <br />
+          <b> Price : &#8377;<%=listing.price.toLocaleString("en-IN")%></b> (Depends on your location)<br /> 
+          <b>Location : <%=listing.location%><br /></b>  
+         <b>State : <%=listing.state%></b> 
         </p>
       </div>
     </div>
@@ -112,10 +116,10 @@
       <%}%>
     </div>
 
-    <div class="col-8 offset-2 mb-3">
+    <div class="col-8 offset-2 ">
       <hr />
       <p><h5 style="text-align: center;">All Reviews</h5></p>
-      <div class="row text-center">
+      <div class="row text-center"  style="background-color: #f1f7fc;">
         <% for(review of listing.reviews){%>
 
         <div class="col-md-4 mb-4 mb-md-0">
@@ -151,11 +155,13 @@
             </form>
             <%}%>
           </div>
+          <br>
         </div>
-
         <%}%>
       </div>
     </div>
+    <br>
+    <br>
   </div>
-  <br /><br />
+ 
 </body>
