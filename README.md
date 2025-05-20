@@ -13,6 +13,10 @@ The Visiting Place project aims to help travelers discover new destinations and 
 - User reviews and ratings
 - Interactive maps
 
+ ## Demo
+ https://youtu.be/lqA1TfWI0xU
+ 
+
 ## Installation
 To install and run the project locally, follow these steps:
 
