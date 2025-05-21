@@ -14,7 +14,7 @@ The Visiting Place project aims to help travelers discover new destinations and 
 - Interactive maps
 
  ## Demo
- https://youtu.be/lqA1TfWI0xU
+ https://youtu.be/2K44jHCYxiE
  
 
 ## Installation
